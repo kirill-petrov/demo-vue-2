@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <pre>home</pre>
+    <global-v-component />
   </div>
 </template>
 

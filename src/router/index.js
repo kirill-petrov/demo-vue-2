@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import HomeView from "../views/HomeView.vue";
+import { HomeView, CounterView } from "@/views";
 
 Vue.use(VueRouter);
 
@@ -11,9 +11,9 @@ const routes = [
     component: HomeView,
   },
   {
-    path: "/about",
-    name: "about",
-    component: () => import("../views/AboutView.vue"),
+    path: "/counter",
+    name: "counter",
+    component: CounterView,
   },
 ];
 
