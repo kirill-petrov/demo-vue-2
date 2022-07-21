@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import { cars } from "./modules/cars";
 
 Vue.use(Vuex);
 
@@ -8,6 +9,7 @@ export default new Vuex.Store({
     return { count: 0 };
   },
   mutations: {
+    // мутации должны быть синхронными
     increment: (state) => state.count++,
     decrement: (state) => state.count--,
   },
@@ -17,5 +19,7 @@ export default new Vuex.Store({
     },
   },
   actions: {},
-  modules: {},
+  modules: {
+    cars,
+  },
 });

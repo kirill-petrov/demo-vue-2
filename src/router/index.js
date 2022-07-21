@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import { HomeView, CounterView } from "@/views";
+import { HomeView, CounterView, CarsView } from "@/views";
 
 Vue.use(VueRouter);
 
@@ -14,6 +14,11 @@ const routes = [
     path: "/counter",
     name: "counter",
     component: CounterView,
+  },
+  {
+    path: "/cars",
+    name: "cars",
+    component: CarsView,
   },
 ];
 

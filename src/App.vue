@@ -2,7 +2,8 @@
   <div id="app">
     <nav>
       <router-link to="/">Home</router-link> |
-      <router-link to="/counter">CounterVuex</router-link>
+      <router-link to="/counter">CounterVuex</router-link> |
+      <router-link to="/cars">Cars</router-link>
     </nav>
     <router-view />
   </div>
