@@ -8,8 +8,9 @@ Vue.config.productionTip = false; //? wtf
 
 Vue.component("global-v-component", GlobalVComponent);
 
+// создание нового экземпляра Vue (view model)
 new Vue({
   router,
   store,
-  render: (h) => h(App),
-}).$mount("#app");
+  render: (h) => h(App), // эквивалент createElement
+}).$mount("#app"); // происходит замена #app

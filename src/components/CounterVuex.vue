@@ -5,19 +5,26 @@
     <div>
       <button @click="increment">+</button>
       <button @click="decrement">-</button>
+      <button @click="incrementAsync">+10</button>
     </div>
   </div>
 </template>
 
 <script>
 import store from "@/store";
+import { mapGetters } from "vuex";
 
 export default {
   name: "CounterVuex",
   computed: {
-    count() {
-      return store.state.count;
-    },
+    // v1
+    //  count() {
+    //   return store.state.count;
+    // },
+    // v2
+    ...mapGetters({
+      count: "getCount",
+    }),
   },
   methods: {
     increment() {
@@ -26,12 +33,15 @@ export default {
     decrement() {
       store.commit("decrement");
     },
+    incrementAsync() {
+      this.$store.dispatch("incrementAsync");
+    },
   },
 };
 </script>
 
 <style>
 button {
-  width: 30px;
+  width: 50px;
 }
 </style>
