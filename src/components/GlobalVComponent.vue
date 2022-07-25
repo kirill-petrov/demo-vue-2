@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: "GlobalVComponent",
+  name: 'GlobalVComponent',
 };
 </script>
 
