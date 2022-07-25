@@ -11,11 +11,11 @@
 </template>
 
 <script>
-import store from "@/store";
-import { mapGetters } from "vuex";
+import store from '@/store';
+import { mapGetters } from 'vuex';
 
 export default {
-  name: "CounterVuex",
+  name: 'CounterVuex',
   computed: {
     // v1
     //  count() {
@@ -23,18 +23,18 @@ export default {
     // },
     // v2
     ...mapGetters({
-      count: "getCount",
+      count: 'getCount',
     }),
   },
   methods: {
     increment() {
-      return store.commit("increment");
+      return store.commit('increment');
     },
     decrement() {
-      store.commit("decrement");
+      store.commit('decrement');
     },
     incrementAsync() {
-      this.$store.dispatch("incrementAsync");
+      this.$store.dispatch('incrementAsync');
     },
   },
 };

@@ -9,10 +9,10 @@
 </template>
 
 <script>
-import CounterVuex from "@/components/CounterVuex.vue";
+import CounterVuex from '@/components/CounterVuex.vue';
 
 export default {
-  name: "CounterView",
+  name: 'CounterView',
   components: { CounterVuex },
   computed: {
     storeGetters() {

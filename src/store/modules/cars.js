@@ -8,19 +8,18 @@ export const cars = {
   state: () => ({
     cars: [
       {
-        model: "Toyota",
-        color: "black",
+        model: 'Toyota',
+        color: 'black',
       },
       {
-        model: "Tesla",
-        color: "red",
+        model: 'Tesla',
+        color: 'red',
       },
     ],
-    somedata: "somedata123",
+    somedata: 'somedata123',
   }),
   mutations: {
     addCar: (state, payload) => {
-      console.log("*mutations addCar", payload);
       state.cars.push(payload);
     },
   },

@@ -12,17 +12,17 @@
 </template>
 
 <script>
-import store from "@/store";
+import store from '@/store';
 
 export default {
-  name: "CarsView",
+  name: 'CarsView',
   methods: {
     addCar(e) {
       const payload = {
         model: e.target.model.value,
         color: e.target.color.value,
       };
-      store.commit("cars/addCar", payload);
+      store.commit('cars/addCar', payload);
     },
   },
 };
