@@ -20,8 +20,8 @@ import AppEmailBody from '../components/AppEmailBody';
 
 export default {
   // components: {AppEmailBody},
-  name: 'MailView',
-  inject: ['emails'],
+  name: 'VmailMailView',
+  inject: ['emails'], // ! VmailMailView не является ребёнком
   components: {
     AppEmailBody,
   },

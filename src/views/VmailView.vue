@@ -22,21 +22,8 @@ export default {
       isAuth: 'vmail/checkAuth',
     }),
   },
-  methods: {
-    login() {
-      this.$store.commit('vmail/login');
-      // this.$router.push('/vmail/dashboard');
-    },
-    logout() {
-      this.$store.commit('vmail/logout');
-      // this.isAuth = false;
-      // this.$router.push('/vmail');
-    },
-  },
-  provide() {
+  data() {
     return {
-      login: this.login,
-      logout: this.logout,
       emails: [
         { id: 1, theme: 'тема-1' },
         { id: 2, theme: 'тема-2' },
@@ -44,6 +31,23 @@ export default {
         { id: 4, theme: 'тема-4' },
         { id: 5, theme: 'тема-5' },
       ],
+    };
+  },
+  methods: {
+    login() {
+      this.$store.commit('vmail/login');
+      // this.$router.push('/vmail/dashboard');
+    },
+    logout() {
+      this.$store.commit('vmail/logout');
+      // this.$router.push('/vmail');
+    },
+  },
+  provide() {
+    return {
+      login: this.login,
+      logout: this.logout,
+      emails: this.emails,
     };
   },
 };

@@ -7,10 +7,11 @@ import {
   VmailView,
   NotFoundView,
   DashboardView,
-  MailView,
+  VmailMailView,
   VmailForgetView,
   FormsView,
 } from '@/views';
+import ReactionTimer from '@/views/ReactionTimer/ReactionTimer.vue';
 Vue.use(VueRouter);
 
 const routes = [
@@ -42,7 +43,7 @@ const routes = [
   {
     path: '/vmail/mail',
     name: 'mail',
-    component: MailView,
+    component: VmailMailView,
   },
   {
     path: '/vmail/forget',
@@ -53,6 +54,11 @@ const routes = [
     path: '/forms',
     name: 'forms',
     component: FormsView,
+  },
+  {
+    path: '/reactionTimer',
+    name: 'reactionTimer',
+    component: ReactionTimer,
   },
   {
     path: '/*',
