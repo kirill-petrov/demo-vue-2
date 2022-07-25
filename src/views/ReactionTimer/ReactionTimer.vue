@@ -1,16 +1,19 @@
 <template>
   <div>
     <h1>Reaction Timer</h1>
-    <block />
+    <button @click="start" :disabled="isPlaying">Play</button>
+    <block v-if="isPlaying" :delay="delay" @end="endGame" />
+    <result v-if="showResults" :score="score" />
   </div>
 </template>
 
 <script>
 import Block from '@/components/ReactionTimerGame/BlockItem.vue';
+import Result from '@/components/ReactionTimerGame/ResultItem.vue';
 
 export default {
   name: 'ReactionTimer',
-  components: { Block },
+  components: { Block, Result },
   data() {
     return {
       isPlaying: false,
@@ -37,16 +40,12 @@ export default {
 
 <style lang="scss" scoped>
 #app {
-  // todo: delete
-  // font-family: Avenir, Helvetica, Arial, sans-serif;
-  // -webkit-font-smoothing: antialiased;
-  // -moz-osx-font-smoothing: grayscale;
-  // text-align: center;
   color: #444;
   margin-top: 60px;
 }
 button {
-  background: #0faf87;
+  background: #42b983;
+  width: auto;
   color: white;
   border: none;
   padding: 8px 16px;

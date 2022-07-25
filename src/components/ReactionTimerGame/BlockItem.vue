@@ -13,6 +13,7 @@ export default {
     };
   },
   mounted() {
+    // сработает только когда смонтируется в ДОМ
     setTimeout(() => {
       this.showBlock = true;
       this.startTimer();
@@ -20,13 +21,13 @@ export default {
   },
   methods: {
     startTimer() {
-      // start the timer, tick every 10ms
+      console.log('// start the timer, tick every 10ms');
       this.timer = setInterval(() => {
         this.reactionTime += 10;
       }, 10);
     },
     stopTimer() {
-      // stop the timer
+      console.log('// stop the timer', this.reactionTime);
       clearInterval(this.timer);
       this.$emit('end', this.reactionTime);
     },
@@ -34,11 +35,11 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .block {
   width: 400px;
   border-radius: 20px;
-  background: #0faf87;
+  background: #42b983;
   color: white;
   text-align: center;
   padding: 100px 0;
