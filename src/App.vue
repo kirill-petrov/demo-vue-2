@@ -5,7 +5,8 @@
       <router-link to="/counter">Counter</router-link> |
       <router-link to="/cars">Cars</router-link> |
       <router-link to="/vmail">Vmail</router-link> |
-      <router-link to="/forms">Forms</router-link>
+      <!-- <router-link to="/forms">Forms</router-link> -->
+      <router-link to="/reactionTimer">Game</router-link>
     </nav>
     <router-view />
   </div>
