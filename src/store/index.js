@@ -1,12 +1,14 @@
-import Vue from "vue";
-import Vuex from "vuex";
-import { cars } from "./modules/cars";
+import Vue from 'vue';
+import Vuex from 'vuex';
+import { cars } from './modules/cars';
+import { vmail } from './modules/vmail';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   modules: {
     cars,
+    vmail,
   },
   state: () => {
     return { count: 0 };
@@ -32,7 +34,7 @@ export default new Vuex.Store({
   actions: {
     incrementAsync(context) {
       setTimeout(() => {
-        context.commit("addTen", {
+        context.commit('addTen', {
           value: 10,
         });
       }, 1000);
