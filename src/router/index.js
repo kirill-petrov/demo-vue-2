@@ -6,12 +6,14 @@ import {
   CarsView,
   VmailView,
   NotFoundView,
-  DashboardView,
+  // DashboardView,
   VmailMailView,
   VmailForgetView,
   FormsView,
 } from '@/views';
 import ReactionTimer from '@/views/ReactionTimer/ReactionTimer.vue';
+import HomePage from '@/views/plannerPages/HomePage.vue';
+
 Vue.use(VueRouter);
 
 const routes = [
@@ -35,11 +37,11 @@ const routes = [
     name: 'vmail',
     component: VmailView,
   },
-  {
-    path: '/vmail/dashboard',
-    name: 'dashboard',
-    component: DashboardView,
-  },
+  // {
+  //   path: '/vmail/dashboard',
+  //   name: 'dashboard',
+  //   component: DashboardView,
+  // },
   {
     path: '/vmail/mail',
     name: 'mail',
@@ -59,6 +61,11 @@ const routes = [
     path: '/reactionTimer',
     name: 'reactionTimer',
     component: ReactionTimer,
+  },
+  {
+    path: '/planner',
+    name: 'planner',
+    component: HomePage,
   },
   {
     path: '/*',
