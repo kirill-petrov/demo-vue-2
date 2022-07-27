@@ -2,7 +2,11 @@
   <div class="planner-home">
     <div v-if="projects.length">
       <div v-for="project of projects" :key="project.id">
-        <single-project :project="project" @delete="handleDelete" />
+        <single-project
+          :project="project"
+          @delete="handleDelete"
+          @complete="handleComplete"
+        />
       </div>
     </div>
   </div>
@@ -23,11 +27,15 @@ export default {
     fetch('http://localhost:8000/projects')
       .then((response) => response.json())
       .then((data) => (this.projects = data))
-      .catch((error) => console.log(error.message));
+      .catch((err) => console.log(err.message));
   },
   methods: {
     handleDelete(id) {
       this.projects = this.projects.filter((item) => item.id !== id);
+    },
+    handleComplete(id) {
+      let p = this.projects.find((item) => item.id === id);
+      p.complete = !p.complete;
     },
   },
 };
