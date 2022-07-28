@@ -12,7 +12,6 @@ import {
   FormsView,
 } from '@/views';
 import ReactionTimer from '@/views/ReactionTimer/ReactionTimer.vue';
-import HomePage from '@/views/plannerPages/HomePage.vue';
 
 Vue.use(VueRouter);
 
@@ -63,9 +62,20 @@ const routes = [
     component: ReactionTimer,
   },
   {
-    path: '/planner',
-    name: 'planner',
-    component: HomePage,
+    path: '/todo',
+    name: 'homePage',
+    component: () => import('@/views/todoPages/HomePage'),
+  },
+  {
+    path: '/todo/add',
+    name: 'addProject',
+    component: () => import('@/views/todoPages/AddProject'),
+  },
+  {
+    path: '/todo/edit/:id',
+    name: 'editProject',
+    component: () => import('@/views/todoPages/EditProject'),
+    props: true,
   },
   {
     path: '/*',

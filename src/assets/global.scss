@@ -1,3 +1,6 @@
+$color-vue: #42b983;
+$color-vue-gray: #f3f5f7;
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -15,7 +18,7 @@ nav {
     text-decoration: none;
 
     &.router-link-exact-active {
-      color: #42b983;
+      color: $color-vue;
     }
   }
 }
@@ -25,5 +28,12 @@ nav {
   font-size: 0.8rem;
   text-align: center;
   text-decoration: none;
-  color: #42b983;
+  color: $color-vue;
+}
+
+// ↓↓↓ /todo
+.todo-container {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #555;
 }

@@ -1,5 +1,6 @@
 <template>
-  <div class="planner-home">
+  <div class="todo-container">
+    <MainNav />
     <div v-if="projects.length">
       <div v-for="project of projects" :key="project.id">
         <single-project
@@ -13,11 +14,12 @@
 </template>
 
 <script>
-import SingleProject from '@/components/planner/SingleProject.vue';
+import SingleProject from '@/components/todo/SingleProject.vue';
+import MainNav from '@/components/todo/MainNav.vue';
 
 export default {
   name: 'HomePage',
-  components: { SingleProject },
+  components: { SingleProject, MainNav },
   data() {
     return {
       projects: [],
@@ -41,10 +43,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.planner-home {
-  max-width: 600px;
-  margin: 0 auto;
-  color: #555;
-}
-</style>
+<style></style>

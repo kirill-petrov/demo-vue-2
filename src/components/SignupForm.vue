@@ -95,10 +95,12 @@ export default {
 </script>
 
 <style lang="scss">
+@import '@/assets/global.scss';
+
 .form {
   max-width: 300px;
   margin: 30px auto;
-  background: rgb(241, 241, 241);
+  background: $color-vue-gray;
   text-align: left;
   padding: 40px;
   border-radius: 10px;
