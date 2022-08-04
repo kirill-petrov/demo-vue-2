@@ -14,7 +14,7 @@ export default {};
 
 .todo-nav {
   text-align: center;
-  margin: 40px auto;
+  margin: 0 auto 0;
   a {
     display: inline-block;
     text-decoration: none;

@@ -4,7 +4,12 @@
     <input type="text" v-model="title" required />
     <label>Details</label>
     <textarea v-model="details" required></textarea>
-    <button class="btn">Add Project</button>
+    <div class="btn-group">
+      <button class="btn btn--gray" type="button" @click="$router.back()">
+        Back
+      </button>
+      <button class="btn">Add Project</button>
+    </div>
   </form>
 </template>
 
@@ -43,6 +48,16 @@ form {
   background: $color-vue-gray;
   padding: 20px;
   border-radius: 10px;
+
+  .btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .btn--gray {
+    background: #bbb;
+  }
 }
 
 label {
@@ -68,9 +83,9 @@ textarea {
   box-sizing: border-box;
   height: 100px;
 }
-form .btn {
+.btn {
   display: block;
-  margin: 20px auto 0;
+  margin: 20px 0;
   background: $color-vue;
   color: white;
   padding: 10px;

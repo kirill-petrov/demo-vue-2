@@ -1,8 +1,12 @@
 <template>
   <div class="todo-container">
     <MainNav />
+    <FilterNav
+      @filterChange="currentFilter = $event"
+      :currentFilter="currentFilter"
+    />
     <div v-if="projects.length">
-      <div v-for="project of projects" :key="project.id">
+      <div v-for="project of filteredProjects" :key="project.id">
         <single-project
           :project="project"
           @delete="handleDelete"
@@ -16,13 +20,15 @@
 <script>
 import SingleProject from '@/components/todo/SingleProject.vue';
 import MainNav from '@/components/todo/MainNav.vue';
+import FilterNav from '@/components/todo/FilterNav.vue';
 
 export default {
   name: 'HomePage',
-  components: { SingleProject, MainNav },
+  components: { SingleProject, MainNav, FilterNav },
   data() {
     return {
       projects: [],
+      currentFilter: 'all',
     };
   },
   mounted() {
@@ -30,6 +36,17 @@ export default {
       .then((response) => response.json())
       .then((data) => (this.projects = data))
       .catch((err) => console.log(err.message));
+  },
+  computed: {
+    filteredProjects() {
+      if (this.currentFilter === 'completed') {
+        return this.projects.filter((project) => project.complete);
+      }
+      if (this.currentFilter === 'inProcess') {
+        return this.projects.filter((project) => !project.complete);
+      }
+      return this.projects;
+    },
   },
   methods: {
     handleDelete(id) {
