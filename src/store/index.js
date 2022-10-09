@@ -30,8 +30,8 @@ export default new Vuex.Store({
       state.count += payload.value;
     },
   },
-  // для работы с асинхронным кодом
   actions: {
+    // для работы с асинхронным кодом
     incrementAsync(context) {
       setTimeout(() => {
         context.commit('addTen', {

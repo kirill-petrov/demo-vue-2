@@ -9,7 +9,7 @@ import {
   // DashboardView,
   VmailMailView,
   VmailForgetView,
-  FormsView,
+  // FormsView,
 } from '@/views';
 import ReactionTimer from '@/views/ReactionTimer/ReactionTimer.vue';
 
@@ -51,11 +51,11 @@ const routes = [
     name: 'forget',
     component: VmailForgetView,
   },
-  {
-    path: '/forms',
-    name: 'forms',
-    component: FormsView,
-  },
+  // {
+  //   path: '/forms',
+  //   name: 'forms',
+  //   component: FormsView,
+  // },
   {
     path: '/reactionTimer',
     name: 'reactionTimer',
@@ -75,7 +75,12 @@ const routes = [
     path: '/todo/edit/:id',
     name: 'editProject',
     component: () => import('@/views/todoPages/EditProject'),
-    props: true,
+    props: true, //?? зачем это
+  },
+  {
+    path: '/css/slider',
+    name: 'slider',
+    component: () => import('@/views/CssSlider'),
   },
   {
     path: '/*',

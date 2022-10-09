@@ -9,4 +9,4 @@ export { default as VmailForgetView } from './VmailForgetView.vue';
 export { default as VmailDashboardView } from './VmailDashboardView.vue';
 export { default as VmailMailView } from './VmailMailView.vue';
 
-export { default as FormsView } from './FormsView.vue';
+// export { default as FormsView } from './FormsView.vue';
