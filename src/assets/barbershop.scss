@@ -1,0 +1,292 @@
+.slider-button {
+  width: 48px;
+  height: 60px;
+  color: #ffffff;
+  background-color: #000;
+  border: none;
+  cursor: pointer;
+  background-image: url('https://super.so/icon/light/arrow-left.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &:hover {
+    background-color: #814b18;
+  }
+
+  &:focus {
+    outline: 2px solid #dbb590;
+    background-color: #4e2e0e;
+  }
+}
+
+.slider-prev {
+  transform: rotate(180deg);
+}
+
+.slider-pagination {
+  display: flex;
+  flex-wrap: wrap; // защита от переполнения - типа 30 слайдов
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.slider-pagination-item {
+  margin: 0 4px;
+}
+
+.slider-pagination-button {
+  width: 8px;
+  height: 8px;
+  margin: 0;
+  padding: 0;
+  background-color: #dbdbdb;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #af7842;
+  }
+
+  &:focus {
+    background-color: #dbb590;
+    outline: none;
+  }
+
+  &-current {
+    background-color: #242424;
+  }
+}
+
+.slider {
+  margin: 0 auto;
+  width: 300px;
+}
+
+.slider-image {
+  display: block;
+}
+
+.slider-wrapper {
+  position: relative;
+}
+
+.slider-controls {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  transform: translateY(-50%);
+}
+
+
+/* Button */
+.button {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 14px 20px;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 700;
+  text-align: center;
+  color: #ffffff;
+  background-color: #000000;
+  border: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* Light */
+.button-light,
+.button-current {
+  color: #242424;
+  background-color: #ffffff;
+}
+
+.button:hover,
+.footer-social-link:hover {
+  background-color: #814b18;
+}
+
+.button:focus,
+.footer-social-link:focus {
+  outline: 2px solid #dbb590;
+  background-color: #4e2e0e;
+}
+
+.auth-form-button {
+  width: 360px;
+  margin-bottom: 16px;
+}
+
+.auth-form .button+.button {
+  margin: 0;
+}
+
+.auth-form-register {
+  width: 360px;
+  color: #000000;
+  background-color: #ffffff;
+}
+
+.modal-container {
+  // паранжа
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal {
+  position: relative;
+  margin: auto;
+  padding: 40px;
+  background-color: #ffffff;
+
+  &-auth {
+    width: 360px;
+  }
+
+  &-close-button {
+    position: absolute;
+    padding: 0;
+    top: 0;
+    right: 0;
+    width: 56px;
+    height: 44px;
+    background-color: #ffffff;
+    border: none;
+    background-image: url('../assets/svg/close.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+  }
+
+  &-title {
+    margin: 0;
+    margin-bottom: 24px;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 32px;
+    line-height: 35px;
+    font-weight: 700;
+    color: #000000;
+    text-transform: uppercase;
+  }
+}
+
+.auth-form .field-group {
+  margin: 0;
+  margin-bottom: 16px;
+}
+
+.auth-form-user-options {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 400;
+  color: red;
+}
+
+.auth-form-user-options .control-label {
+  font-weight: 400;
+}
+
+.auth-form .field {
+  width: 328px;
+}
+
+.auth-form-recovery {
+  line-height: 22px;
+  color: #000000;
+}
+
+.auth-form-button {
+  width: 360px;
+  margin-bottom: 16px;
+}
+
+.auth-form .button+.button {
+  margin: 0;
+}
+
+.auth-form-register {
+  width: 360px;
+  color: #000000;
+  background-color: #ffffff;
+}
+
+.modal-container-close {
+  display: none;
+}
+
+/* Control */
+.control {
+  position: relative;
+  display: block;
+  padding-left: 36px;
+}
+
+/* Mark */
+.control-mark {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #242424;
+}
+
+.control:hover .control-mark {
+  border-color: #814b18;
+}
+
+.control-input:disabled+.control-mark {
+  border-color: #242424;
+}
+
+/* Checkbox */
+.control-input[type='checkbox']:checked+.control-mark::before,
+.control-input[type='checkbox']:checked+.control-mark::after {
+  position: absolute;
+  top: 7px;
+  left: 2px;
+  width: 12px;
+  height: 2px;
+  background-color: #242424;
+  content: '';
+}
+
+.control-input[type='checkbox']:checked+.control-mark::before {
+  transform: rotate(45deg);
+}
+
+.control-input[type='checkbox']:checked+.control-mark::after {
+  transform: rotate(-45deg);
+}
+
+/* Label */
+.control-label {
+  line-height: 22px;
+  font-weight: 700;
+}
+
+.form-label-icon {
+  position: relative;
+  padding-right: 16px;
+}
+.catalog-filter-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.catalog-filter-item:not(:last-child) {
+  margin-bottom: 16px;
+}

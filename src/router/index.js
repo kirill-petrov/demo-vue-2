@@ -75,12 +75,27 @@ const routes = [
     path: '/todo/edit/:id',
     name: 'editProject',
     component: () => import('@/views/todoPages/EditProject'),
-    props: true, //?? зачем это
+    props: true, //?? зачем это не помню
   },
   {
     path: '/css/slider',
     name: 'slider',
     component: () => import('@/views/CssSlider'),
+  },
+  {
+    path: '/css/modal',
+    name: 'modal',
+    component: () => import('@/views/CssModal'),
+  },
+  {
+    path: '/css/popover',
+    name: 'popover',
+    component: () => import('@/views/CssPopover'),
+  },
+  {
+    path: '/css/forms',
+    name: 'forms',
+    component: () => import('@/views/CssForms'),
   },
   {
     path: '/*',
